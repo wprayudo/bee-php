@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<package packagerversion="1.4.11" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+  <name>Bee</name>
+  <channel>bee.github.io/bee-php/pecl</channel>
+  <summary>PHP extension for Bee</summary>
+  <description>
+    PECL PHP driver for Bee
+  </description>
+  <lead>
+    <name>Wahyu</name>
+    <user>foura</user>
+    <email>wahyu@foura.io</email>
+    <active>yes</active>
+  </lead>
+  <date>2015-02-26</date>
+  <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+  </version>
+  <stability>
+    <release>beta</release>
+    <api>beta</api>
+  </stability>
+  <license uri="http://opensource.org/licenses/bsd-license.php">BSD 2-Clause</license>
+  <notes>-</notes>
+  <contents>
+    <dir name="/">
+      <file role='src' name='config.m4'/>
+      <dir name='src'>
+        <file role='src' name='php_bee.h'/>
+        <file role='src' name='bee.c'/>
+        <file role='src' name='bee_manager.c'/>
+        <file role='src' name='bee_manager.h'/>
+        <file role='src' name='bee_msgpack.c'/>
+        <file role='src' name='bee_msgpack.h'/>
+        <file role='src' name='bee_proto.c'/>
+        <file role='src' name='bee_proto.h'/>
+        <file role='src' name='bee_schema.c'/>
+        <file role='src' name='bee_schema.h'/>
+        <file role='src' name='bee_tp.c'/>
+        <file role='src' name='bee_tp.h'/>
+        <dir name='third_party'>
+          <file role='src' name='base64.c'/>
+          <file role='src' name='base64.h'/>
+          <file role='src' name='mhash.h'/>
+          <file role='src' name='msgpuck.c'/>
+          <file role='src' name='msgpuck.h'/>
+          <file role='src' name='PMurHash.c'/>
+          <file role='src' name='PMurHash.h'/>
+          <file role='src' name='sha1.c'/>
+          <file role='src' name='sha1.h'/>
+          <file role='src' name='tp.h'/>
+        </dir> <!-- third_party -->
+      </dir> <!-- src -->
+      <file role='test' name='test-run.py'/>
+      <dir name='lib'>
+        <file role='test' name='__init__.py'/>
+        <file role='test' name='bee_server.py'/>
+      </dir> <!-- lib -->
+      <dir name='test'>
+        <file role='test' name='CreateTest.php'/>
+        <file role='test' name='DMLTest.php'/>
+        <file role='test' name='MockTest.php'/>
+        <file role='test' name='MsgPackTest.php'/>
+        <file role='test' name='phpunit'/>
+        <file role='test' name='phpunit.phar'/>
+        <dir name='shared'>
+          <file role='test' name='db.lua'/>
+          <file role='test' name='phpunit.xml'/>
+          <file role='test' name='bee.ini'/>
+          <file role='test' name='valgrind.sup'/>
+        </dir> <!-- shared -->
+      </dir> <!-- tests -->
+    </dir> <!-- / -->
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.4.0</min>
+        <max>6.0.0</max>
+        <exclude>6.0.0</exclude>
+      </php>
+      <pearinstaller>
+        <min>1.4.0</min>
+      </pearinstaller>
+    </required>
+  </dependencies>
+  <providesextension>bee</providesextension>
+  <extsrcrelease/>
+  <changelog>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.1.0</release><api>0.1.0</api></version>
+      <date>2016-02-26</date>
+      <notes>
+        bee-php 0.1.0
+
+        Fix a lot of bugs, added upsert command, added tests
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.13</release><api>0.0.13</api></version>
+      <date>2015-04-24</date>
+      <notes>
+        bee-php 0.0.13
+
+        Schema is rewritten (using mhash, not zend hash).
+        Batching auth+select_index+select_space (download schema) using tp.h
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.12</release><api>0.0.12</api></version>
+      <date>2015-04-24</date>
+      <notes>
+        bee-php 0.0.12
+
+        Fix couple of segfaults and memory leaks
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.11</release><api>0.0.11</api></version>
+      <date>2015-04-22</date>
+      <notes>
+        bee-php 0.0.11
+
+        Fix select error on 32bit systems, update version of rpm packages
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.10</release><api>0.0.10</api></version>
+      <date>2015-03-24</date>
+      <notes>
+        bee-php 0.0.10
+
+        Add alias for flush_schema -> flushSchema
+        Add eval to commands
+        Fix segfaults when args are empty in eval/call
+        Add RTree constants
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.9</release><api>0.0.9</api></version>
+      <date>2015-03-24</date>
+      <notes>
+        bee-php 0.0.9
+
+        Fix for build with pecl
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.8</release><api>0.0.8</api></version>
+      <date>2015-03-24</date>
+      <notes>
+        bee-php 0.0.8
+
+        Fixing avito segfaults, remove obsolete cleanups
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.7</release><api>0.0.7</api></version>
+      <date>2015-03-17</date>
+      <notes>
+        bee-php 0.0.7
+
+        Fixing avito segfaults
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.6</release><api>0.0.5</api></version>
+      <date>2015-03-08</date>
+      <notes>
+        bee-php 0.0.6
+
+        Fixing some segfaults
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.5</release><api>0.0.5</api></version>
+      <date>2014-02-09</date>
+      <notes>
+        bee-php 0.0.5
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.4</release><api>0.0.4</api></version>
+      <date>2014-08-11</date>
+      <notes>
+        bee-php 0.0.4
+
+        Added connection pool for PHP-FPM, fixing memleaks, fixing msgpack
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.3</release><api>0.0.3</api></version>
+      <date>2014-08-11</date>
+      <notes>
+        bee-php 0.0.3
+
+        Continue with Tests, Fixing Bugs
+        Adding global constants for different iterator types
+      </notes>
+    </release>
+    <release>
+      <stability><release>beta</release><api>beta</api></stability>
+      <version><release>0.0.2</release><api>0.0.2</api></version>
+      <date>2014-08-07</date>
+      <notes>
+        bee-php 0.0.2
+
+        Initial Release
+      </notes>
+    </release>
+ </changelog>
+</package>
+

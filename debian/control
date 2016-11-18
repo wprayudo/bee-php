@@ -1,0 +1,23 @@
+Source: php-bee
+Priority: optional
+Maintainer: Dmitry E. Oboukhov <unera@debian.org>
+Build-Depends: debhelper (>= 8),
+               php5-dev | php-all-dev,
+               pkg-config
+Section: php
+Standards-Version: 3.9.4
+Homepage: https://github.com/bee/bee-php
+VCS-Browser: https://github.com/bee/bee-php
+VCS-Git: git://github.com/bee/bee-php.git
+
+Package: php5-bee
+Architecture: any
+Priority: optional
+Conflicts: libbee-php
+Replaces: libbee-php
+Depends: ${php:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Suggests: bee
+Description: PECL PHP driver for Bee/Db
+ Bee is an in-memory database and Lua application server.
+ This package provides PECL PHP driver for Bee/Db.
+
